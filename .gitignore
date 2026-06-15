@@ -1,0 +1,14 @@
+# Virtual Environment
+.project/
+__pycache__/
+*.pyc
+
+# Local Databases & Vector Storage
+youtube_vector_db/
+mlruns/
+
+# Data Artifacts
+*.csv
+
+# Environment Secrets
+.env
