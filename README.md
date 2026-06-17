@@ -74,6 +74,17 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
+#### Windows Installation Notes & Troubleshooting
+- **PyTorch DLL Load Failure (`WinError 1114`):** If you run into a DLL initialization crash when importing `torch` or `spacy` on Windows, reinstall PyTorch using the CPU-only build:
+  ```powershell
+  pip install torch --index-url https://download.pytorch.org/whl/cpu --force-reinstall
+  ```
+- **spaCy Model Downloader HTTP 404:** If the automatic `spacy download` command fails on Windows, install the model package directly:
+  ```powershell
+  pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl
+  ```
+
+
 ### 2. Local Inference Engine Setup
 
 Install and start Ollama, then pull the local reasoning model:

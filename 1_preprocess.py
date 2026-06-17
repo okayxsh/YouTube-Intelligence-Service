@@ -9,8 +9,9 @@ nlp = spacy.load("en_core_web_sm")
 
 # 2. Load your scraped data
 print("Loading raw comments...")
-# Replace with your actual filename if different
-df = pd.read_csv("youtube_comments_10k.csv") 
+import os
+csv_path = "youtube_comments_10k_v2.csv" if os.path.exists("youtube_comments_10k_v2.csv") else "youtube_comments_10k.csv"
+df = pd.read_csv(csv_path) 
 
 # Drop empty comments to prevent errors
 df = df.dropna(subset=['comment_text'])

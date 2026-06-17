@@ -1,3 +1,11 @@
+import sys
+import types
+import importlib.machinery
+
+mock_ort = types.ModuleType("onnxruntime")
+mock_ort.__spec__ = importlib.machinery.ModuleSpec("onnxruntime", None)
+sys.modules['onnxruntime'] = mock_ort
+
 import chromadb
 from chromadb.utils import embedding_functions
 import ollama
