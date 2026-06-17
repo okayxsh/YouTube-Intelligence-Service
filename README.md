@@ -84,16 +84,22 @@ ollama pull phi3
 
 ### 3. API Credentials
 
-Create a YouTube Data API v3 key from Google Cloud Console and export it as an environment variable:
+Create a YouTube Data API v3 key from Google Cloud Console. You can export it as an environment variable or use the local `.env` fallback.
 
+#### Linux / macOS (Terminal):
 ```bash
 export YOUTUBE_API_KEY="AIzaSy..."
 ```
 
-Windows PowerShell:
-
+#### Windows (PowerShell):
 ```powershell
 $env:YOUTUBE_API_KEY="AIzaSy..."
+```
+
+#### Local Fallback (.env file):
+Alternatively, create a `.env` file in the root project directory and add your key:
+```env
+YOUTUBE_API_KEY="AIzaSy..."
 ```
 
 ---

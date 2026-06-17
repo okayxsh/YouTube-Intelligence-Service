@@ -5,6 +5,13 @@ from googleapiclient.discovery import build
 import os   
 
 api_key = os.environ.get("YOUTUBE_API_KEY")
+if not api_key and os.path.exists(".env"):
+    with open(".env", "r") as f:
+        for line in f:
+            if line.strip().startswith("YOUTUBE_API_KEY="):
+                api_key = line.strip().split("=", 1)[1].strip("'\"")
+                break
+API_KEY = api_key
 
 # ---------------------------------
 # PULL ALL COMMENTS
