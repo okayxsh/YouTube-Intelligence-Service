@@ -7,6 +7,8 @@ __pycache__/
 # Local Databases & Vector Storage
 youtube_vector_db/
 mlruns/
+mlflow.db
+eval/
 
 # Data Artifacts
 *.csv
